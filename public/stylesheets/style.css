@@ -1,0 +1,127 @@
+*{
+    font-family:"Courier New", Courier, monospace;
+    font-weight: 100;
+    margin: 0;
+    /* cursor: grabbing; */
+    cursor: url(../images/cursor.png), auto;
+    letter-spacing: .1em;
+}
+body,html{
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+#header-marquee{
+    display: flex;
+    align-items: center;
+    letter-spacing: .3em;
+    text-transform: lowercase;
+    font-size: 1em;
+    overflow: hidden;
+    /* position: fixed; */
+    height: 2em;
+    white-space: nowrap;
+    background-color: white;
+    border-bottom: 1px solid black;
+    animation: marquee 10s linear infinite,neon2 3s linear infinite;
+    color: #000;
+}
+
+#down-arrow{
+        position: fixed;
+        bottom: 0;
+        left: 150px;
+}
+#marquee-text{
+    line-height: 100%;
+}
+
+#grid{
+    width: 100%;
+    height:95%;
+    display: grid;
+    grid-template-columns: 310px repeat(12,1fr);
+    grid-template-rows: 9fr 3fr;
+    grid-template-areas:
+    "s c c c c c c c c c c c c"
+    "s f f f f f f f f f f f f" ;
+    
+}
+
+#sidebar{
+    grid-area: s;
+    border-right: 1px solid black;
+    height: 100%;
+    width: 100%;
+
+}
+#content{
+    grid-area: c;
+    border-bottom: 1px solid black;
+}
+#footer{
+    grid-area: f;
+}
+#project-scroll-area{
+    height: 85%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#projects{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+#img-placeholder{
+    height:auto;
+    min-height: 90%;
+    width: 100%;
+}
+#project-image{
+    max-height: 500px;
+    margin: auto;
+    display: block;
+}
+.project{
+    height: 80px;
+    border-bottom: 1px gray dotted;
+}
+.title{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 4.5em;
+    text-transform: uppercase;
+    letter-spacing: -.03em;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+
+
+
+
+@keyframes marquee {
+    0%   { text-indent: 0 }
+    100% { text-indent: -1000px }
+}
+
+@keyframes neon2 {
+    0% {
+    }
+
+    50% {
+      text-shadow: 0 0 5px #303030, 0 0 10px #303030, 0 0 15px #303030, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 75px #fff;
+    }
+    100% {
+      }
+  }
+  
