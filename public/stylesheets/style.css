@@ -93,6 +93,10 @@ body,html{
     height: 80px;
     border-bottom: 1px gray dotted;
 }
+.project:hover{
+    background-color: #ddd;
+    font-size: 1.1em;
+}
 .title{
     font-family: Impact, Charcoal, sans-serif;
     font-size: 4.5em;
@@ -106,7 +110,9 @@ body,html{
 
 
 
-
+strong{
+    font-weight: bold;
+}
 
 
 @keyframes marquee {

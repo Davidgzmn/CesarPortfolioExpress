@@ -1,36 +1,26 @@
 <% include partials/header %>
-    <div id="header-marquee">
-        <span id="marquee-text">csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl csr/axl </span>
-    </div>
 
     <div id="grid">
         <div id="sidebar">
             <h1 class="title">Cesar Axel</h1>
             <div id="project-scroll-area">
                 <div id="projects">
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
-                    <div class="project">Project</div>
+                    <% projects.forEach((project)=>{%>
+                        <div class="project"> <strong><%=project.name%></strong> <p><%=project.short%></p></div>
+                    <%});%>
+
                 </div>
                 <div id="down-arrow">V</div>
             </div>
         </div>
         <div id="content">
-            <h1><%=project.name%></h1>
+            <h1><%=projects[0].name%></h1>
             <div id="img-placeholder">
-            <img id="project-image" src="<%= project.image%>">
+            <img id="project-image" src="<%= projects[0].image%>">
             </div>
         </div>
         <div id="footer">
-                <p><%=project.description%></p>
+                <p><%=projects[0].description%></p>
 
         </div>
     </div>

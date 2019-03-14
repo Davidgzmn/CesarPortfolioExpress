@@ -12,18 +12,18 @@ app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
 mongoose.connect("mongodb://localhost:27017/cesarPortfolio",{useNewUrlParser: true});
 
-app.get("/",(req,res)=>{
+app.get("/projects",(req,res)=>{
     // res.send("main page portfolio");
-        Project.findOne({name:"Contempo Installation"},(err,foundProject)=>{
-            res.render("index",{project:foundProject});
-        });
+    Project.find((err,foundProjects)=>{
+        res.render("index",{projects:foundProjects})
+    });
 });
 
 // Project.create({
-//     name: "Contempo Installation",
-//     image: "https://images.unsplash.com/photo-1522878308970-972ec5eedc0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
-//     description: "First contemporaty art installation in austin texas",
-//     short: "First installation"
+//     name: "Outdoor experience",
+//     image: "https://images.unsplash.com/photo-1467989034424-82d77e6fe0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+//     description: "Outdoor exhibition in Guadalajara Jalisco, utilizing floral patterns and seed packets to create a sense of wonder and congitive dissonance with the hardcore-punk music serving as a backdrop",
+//     short: "Outdoor plants and noise exhibition"
 // },(err,project)=>{
 //     if(err){
 //         console.log(err);
